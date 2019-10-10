@@ -1,174 +1,182 @@
 variable "ssl_support_method" {
-  description = ""
-  default     = ""
+  description = "Specifies how you want CloudFront to serve HTTPS requests. sbi-only or vip. vip will incur additional charges for a dedicated IP"
+  default     = "sni-only"
 }
 
 variable "web_acl_id" {
-  description = ""
+  description = "Web ACL ID that can be attached to the distribution"
   default     = ""
 }
 
 variable "enabled" {
-  description = ""
-  default     = ""
+  description = "Enabled / Disabled"
+  default     = "true"
 }
 
 variable "default_ttl" {
-  description = ""
-  default     = ""
+  description = "Default time-to-live"
+  default     = "60"
 }
 
 variable "geo_restriction_type" {
-  description = ""
-  default     = ""
+  description = "Optional ability to restrict access. None, whitelist or blacklist"
+  default     = "none"
 }
 
 variable "origin_read_timeout" {
-  description = ""
-  default     = ""
+  description = "origin read timeout"
+  default     = "120"
 }
 
 variable "origin_protocol_policy" {
-  description = ""
-  default     = ""
+  description = "The origin protocol policy. http-only, https-only or match-viewer"
+  default     = "match-viewer"
 }
 
 variable "viewer_minimum_protocol_version" {
-  description = ""
-  default     = ""
+  description = "Minimum allowed TLS version"
+  default     = "TLSv1"
 }
 
 variable "viewer_protocol_policy" {
-  description = ""
-  default     = ""
+  description = "Viewer protocol policy. allow-all or redirect-to-https"
+  default     = "redirect-to-https"
 }
 
 variable "allowed_methods" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "List of allowed methods"
+  default     = ["DELETE", "GET", "HEAD", "OPTIONS", "PATCH", "POST", "PUT"]
 }
 
 variable "origin_https_port" {
-  description = ""
-  default     = ""
+  description = "HTTPS port"
+  default     = "443"
 }
 
 variable "compress" {
-  description = ""
-  default     = ""
+  description = "Whether CloudFront will automatically compress content"
+  default     = "false"
 }
 
 variable "aliases" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "List of aliases."
+  default     = []
 }
 
 variable "is_ipv6_enabled" {
-  description = ""
-  default     = ""
+  description = "Enable IPv6"
+  default     = "true"
 }
 
 variable "min_ttl" {
-  description = ""
-  default     = ""
+  description = "Minimum TTL"
+  default     = "0"
 }
 
 variable "max_ttl" {
-  description = ""
-  default     = ""
+  description = "Maximum TTL"
+  default     = "31536000"
 }
 
 variable "forward_query_string" {
-  description = ""
-  default     = ""
+  description = "Forward query strings"
+  default     = "false"
 }
 
 variable "orchestration" {
-  description = ""
+  description = "Link to the orchestration used to build the infra"
   default     = ""
 }
 
 variable "comment" {
-  description = ""
+  description = "Comment for the CloudFront distribution"
   default     = ""
 }
 
 variable "acm_certificate_arn" {
-  description = ""
+  description = "ARN of ACM certificate"
   default     = ""
 }
 
 variable "environment" {
-  description = ""
+  description = "Environment whether infra is build. For example: DEV, UAT or PRD"
   default     = ""
 }
 
 variable "geo_restriction_locations" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "Geographic restriction codes, either used as a whitelist or blacklist "
+  default     = []
 }
 
 variable "origin_keepalive_timeout" {
-  description = ""
-  default     = ""
+  description = "Custom keep-alive timeout"
+  default     = "120"
 }
 
 variable "origin_domain_name" {
-  description = ""
+  description = "DNS domain name of the origin"
   default     = ""
 }
 
 variable "origin_path" {
-  description = ""
+  description = "Optional custom path to use for the origin"
   default     = ""
 }
 
 variable "cached_methods" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "List of cached methods ( GET, PUT, POST, DELETE, HEAD )"
+  default     = ["GET", "HEAD"]
 }
 
 variable "forward_headers" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "Set the headers, if any, that CloudFront should forward. Include all = *"
+  default     = []
 }
 
 variable "price_class" {
-  description = ""
-  default     = ""
+  description = "Price class for the distribution. "
+  default     = "PriceClass_100"
 }
 
 variable "origin_http_port" {
-  description = ""
-  default     = ""
+  description = "HTTP port"
+  default     = "80"
 }
 
 variable "origin_ssl_protocols" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "List of allowed SSL protocols"
+  default     = ["TLSv1", "TLSv1.1", "TLSv1.2"]
 }
 
 variable "forward_cookies" {
-  description = ""
-  default     = ""
+  description = "Forward cookies"
+  default     = "none"
 }
 
 variable "cache_behavior" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "Ordered list of cache behaviours for the distribution"
+  default     = []
 }
 
 variable "default_root_object" {
-  description = ""
-  default     = ""
+  description = "Object to return when accessing the root URL"
+  default     = "index.html"
 }
 
 variable "origin_id" {
-  description = ""
+  description = "A unique identifier for the origin"
   default     = ""
 }
 
 variable "forward_cookies_whitelisted_names" {
-  description = ""
-  default     = ""
+  type        = "list"
+  description = "List of forwarded cookie names"
+  default     = []
 }
