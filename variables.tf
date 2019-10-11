@@ -167,7 +167,7 @@ variable "cache_behavior" {
 
 variable "default_root_object" {
   description = "Object to return when accessing the root URL"
-  default     = "index.html"
+  default     = ""
 }
 
 variable "origin_id" {
