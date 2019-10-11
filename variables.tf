@@ -113,7 +113,7 @@ variable "geo_restriction_locations" {
 
 variable "origin_keepalive_timeout" {
   description = "Custom keep-alive timeout"
-  default     = "120"
+  default     = "60"
 }
 
 variable "origin_domain_name" {
