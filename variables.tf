@@ -39,7 +39,7 @@ variable "viewer_minimum_protocol_version" {
 }
 
 variable "viewer_protocol_policy" {
-  description = "Viewer protocol policy. allow-all or redirect-to-https"
+  description = "Viewer protocol policy. One of allow-all, https-only, or redirect-to-https"
   default     = "redirect-to-https"
 }
 
