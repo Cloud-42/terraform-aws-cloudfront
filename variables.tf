@@ -25,7 +25,7 @@ variable "geo_restriction_type" {
 
 variable "origin_read_timeout" {
   description = "origin read timeout"
-  default     = "120"
+  default     = "60"
 }
 
 variable "origin_protocol_policy" {
